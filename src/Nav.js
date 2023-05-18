@@ -6,13 +6,14 @@ import Logo from "./Logo.svg";
 function Topnav() {
     return (
       <>
-      <Navbar collapseOnSelect bg="light" variant="light" expand="lg" fixed="top">
+      <nav className='fixed-top'>
+      <Navbar collapseOnSelect bg="light" variant="light" expand="lg">
         <Container>
           <Navbar.Brand href="#home">
             <img
               src={Logo}
-              width="100%"
-              height="100%"
+              width="100"
+              height="100"
               className="d-inline-block align-top"
               alt="Little Lemon logo"
             />
@@ -30,6 +31,7 @@ function Topnav() {
           </Navbar.Collapse>
         </Container>
         </Navbar>
+        </nav>
       </>
     );
   }
