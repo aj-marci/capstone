@@ -34,7 +34,19 @@ function Footer () {
           </Card.Link>
         </Card.Body>
         </Col>
+        <Col sm={12} lg={4}>
+        <Card.Body className='justify-right'>
+          <Card.Text>Company</Card.Text>
+          <Card.Link href="indeed.com" target="_blank"
+          className="mb-2 text-muted">Careers</Card.Link>
+          <Row>
+          <Card.Link href="https://nhl.com" target="_blank"
+          className="mb-2 text-muted">Our Story</Card.Link>
+          </Row>
+        </Card.Body>
+        </Col>
         </Row>
+        <Card.Footer className='text-muted text-center'>Copyright Little Lemon</Card.Footer>
     </Card>
     </footer>
     </>
