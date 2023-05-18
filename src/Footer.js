@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import "./App.css"
 
 function Footer () {
   return (
@@ -11,22 +12,25 @@ function Footer () {
     <footer className='fixed-bottom'>
     <Card variant="light" bg="light" border="light">
       <Row>
-      <Col sm={12} lg={6}>
+      <Col sm={12} lg={4}>
         <Card.Body>
-          <Card.Title>Contact Us</Card.Title>
+          <Card.Text>Contact Us</Card.Text>
           <Card.Link href="mailto: help@littlelemon.com">
-            <FontAwesomeIcon icon={faEnvelope} size="xl" color="darkgrey"/>
+            <FontAwesomeIcon icon={faEnvelope} size="xl" color="#495E57"
+            className='mail-icon'/>
           </Card.Link>
         </Card.Body>
         </Col>
-        <Col sm={12} lg={6}>
+        <Col sm={12} lg={4}>
         <Card.Body>
-          <Card.Title>Social Media</Card.Title>
+          <Card.Text>Social Media</Card.Text>
           <Card.Link href="https://meta.com" target="_blank">
-            <FontAwesomeIcon icon={faFacebookF} size="xl" color="darkgrey"/>
+            <FontAwesomeIcon icon={faFacebookF} size="xl" color="#495E57"
+            className='fb-icon'/>
             </Card.Link>
           <Card.Link href="https://instagram.com" target="_blank">
-            <FontAwesomeIcon icon={faInstagram} size="2xl" color="darkgrey"/>
+            <FontAwesomeIcon icon={faInstagram} size="2xl" color="#495E57"
+            className='ig-icon'/>
           </Card.Link>
         </Card.Body>
         </Col>
