@@ -7,11 +7,13 @@ import Food from "./restauranfood.jpg";
 function Header() {
     return (
       <>
-      <header style={{marginTop:"2rem"}}>
+      <header style={{marginTop:"2rem",
+                      marginLeft:"5%",
+                      marginRight:"5%"}}>
         <Card border="light" className='custom-class'
-        style={{width:"75%"}}>
+        style={{width:"90%"}}>
           <Row>
-            <Col sm={12} lg={6}>
+            <Col sm={12} md={4} lg={6}>
             <Card.Title style={{
               marginLeft:"1.15rem",
               marginTop:".5rem",
@@ -35,11 +37,14 @@ function Header() {
               Downtown Chicago.
             </Card.Subtitle>
             </Col>
-            <Col sm={12} lg={4}>
-              <Card.Img variant="bottom" src={Food}
+            <Col sm={12} md={4} lg={6}>
+              <Card.Img src={Food}
               className='img-fluid rounded'
-              style={{height:"16rem",
-              width:"12rem"}}/>
+              style={{height:"15rem",
+              width:"10rem",
+              marginLeft:"20%",
+              marginTop:"5%",
+              marginBottom:"-5%"}}/>
             </Col>
             </Row>
         </Card>
