@@ -12,7 +12,7 @@ function Footer () {
     <footer style={{marginTop:"20rem"}}>
     <Card variant="light" bg="light" border="light">
       <Row>
-      <Col sm={12} lg={4}>
+      <Col sm={12} lg={2}>
         <Card.Body>
           <Card.Text style={{fontFamily:"Karla",
                               color:"#495E57"}}>
@@ -23,7 +23,7 @@ function Footer () {
           </Card.Link>
         </Card.Body>
         </Col>
-        <Col sm={12} lg={4}>
+        <Col sm={12} lg={2}>
         <Card.Body>
           <Card.Text style={{fontFamily:"Karla",
                               color:"#495E57"}}>
@@ -38,7 +38,7 @@ function Footer () {
           </Card.Link>
         </Card.Body>
         </Col>
-        <Col sm={12} lg={4}>
+        <Col sm={12} lg={2}>
         <Card.Body>
           <Card.Text style={{fontFamily:"Karla",
                               color:"#495E57"}}>
