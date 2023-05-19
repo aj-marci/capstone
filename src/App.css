@@ -13,3 +13,8 @@
 .mb-2:hover {
   color:#F4CE14;
 }
+
+.card.custom-class {
+  background-color: #495E57;
+  color:white;
+}
