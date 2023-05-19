@@ -11,7 +11,7 @@ function Header() {
                       marginLeft:"5%",
                       marginRight:"5%"}}>
         <Card border="light" className='custom-class'
-        style={{width:"90%"}}>
+        style={{width:"70%"}}>
           <Row>
             <Col sm={12} md={4} lg={6}>
             <Card.Title style={{
@@ -29,8 +29,8 @@ function Header() {
             <Card.Subtitle style={{
               marginLeft:"1.15rem",
               marginBottom:".5rem",
-              fontSize:".95rem",
-              width:"80%",
+              fontSize:"1rem",
+              width:"90%",
               fontFamily:"Karla"}}>
               We are a family owned Mediterranian restaurant,
               focused on traditional recipes, served with a modern twist nestled
@@ -41,10 +41,10 @@ function Header() {
               <Card.Img src={Food}
               className='img-fluid rounded'
               style={{height:"15rem",
-              width:"10rem",
-              marginLeft:"20%",
-              marginTop:"5%",
-              marginBottom:"-5%"}}/>
+              width:"12rem",
+              marginLeft:"4rem",
+              marginTop:"1.5rem",
+              marginBottom:"-1.5rem"}}/>
             </Col>
             </Row>
         </Card>

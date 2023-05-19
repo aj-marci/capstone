@@ -17,4 +17,6 @@
 .card.custom-class {
   background-color: #495E57;
   color:white;
+  margin-left: auto;
+  margin-right: auto;
 }

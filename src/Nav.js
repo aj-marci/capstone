@@ -20,12 +20,20 @@ function Topnav() {
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Container>
+          <Container className="nav-items">
           <Nav className="justify-content-end">
-          <Nav.Link>About</Nav.Link>
-          <Nav.Link>Reservations</Nav.Link>
-          <Nav.Link>Specials</Nav.Link>
-          <Nav.Link>Order Online</Nav.Link>
+          <Nav.Link style={{fontFamily:"Karla", color:"#495E57"}}>
+            About
+          </Nav.Link>
+          <Nav.Link style={{fontFamily:"Karla", color:"#495E57"}}>
+            Reservations
+          </Nav.Link>
+          <Nav.Link style={{fontFamily:"Karla", color:"#495E57"}}>
+            Specials
+          </Nav.Link>
+          <Nav.Link style={{fontFamily:"Karla", color:"#495E57"}}>
+            Order Online
+          </Nav.Link>
           </Nav>
           </Container>
           </Navbar.Collapse>
