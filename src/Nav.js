@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Logo from "./Logo.svg";
+import Logo from "./Images/Logo.svg";
 
 function Topnav() {
     return (
@@ -20,21 +20,13 @@ function Topnav() {
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Container className="nav-items">
-          <Nav className="justify-content-end">
-          <Nav.Link style={{fontFamily:"Karla", color:"#495E57"}}>
-            About
-          </Nav.Link>
-          <Nav.Link style={{fontFamily:"Karla", color:"#495E57"}}>
-            Reservations
-          </Nav.Link>
-          <Nav.Link style={{fontFamily:"Karla", color:"#495E57"}}>
-            Specials
-          </Nav.Link>
-          <Nav.Link style={{fontFamily:"Karla", color:"#495E57"}}>
-            Order Online
-          </Nav.Link>
-          </Nav>
+          <Container className='nav-items'>
+            <Nav className="justify-content-end">
+              <Nav.Link href="#about">About</Nav.Link>
+              <Nav.Link href="#reserve">Reservations</Nav.Link>
+              <Nav.Link href='#specials'>Specials</Nav.Link>
+              <Nav.Link href='#order'>Order Online</Nav.Link>
+            </Nav>
           </Container>
           </Navbar.Collapse>
         </Container>

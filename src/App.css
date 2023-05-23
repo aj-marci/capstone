@@ -24,3 +24,9 @@
 .nav-items {
   font-family: Karla;
 }
+
+.reserve-btn {
+  margin-left: 1.15rem;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+}

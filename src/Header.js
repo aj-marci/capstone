@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 import "./App.css"
 import Food from "./Images/restauranfood.jpg";
 
@@ -36,6 +37,12 @@ function Header() {
               focused on traditional recipes, served with a modern twist nestled
               Downtown Chicago.
             </Card.Subtitle>
+            <Button className='reserve-btn'
+                variant='dark'
+                bg='dark'
+                style={{
+                fontFamily:"Karla",
+              }}>Reserve a Table</Button>
             </Col>
             <Col sm={12} md={4} lg={6}>
               <Card.Img src={Food}
