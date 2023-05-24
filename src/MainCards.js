@@ -31,6 +31,20 @@ const specials = [
 function MainCards() {
     return (
       <>
+    <Card className='test-title'
+          variant='light' border='light' bg='light'
+          style={{width:'70%'}}>
+        <Row>
+            <Col sm={12} lg={12} align='center'>
+              <Card.Title variant='dark'
+              style={{
+              marginTop:".5rem",
+              fontSize:"2.25rem",
+              fontFamily:"Markazi"}}>
+              Current Specials!</Card.Title>
+            </Col>
+        </Row>
+    </Card>
         <Row xs={1} md={2} lg={3}>
         {specials.map(({ id, icon, price, title, description }) => (
             <Col key={id}>

@@ -1,3 +1,7 @@
+.App {
+  background-color: #F4CE14;
+}
+
 .mail-icon:hover {
   color:#F4CE14;
 }
@@ -50,4 +54,8 @@
   margin-top: 4rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.test-cards {
+  font-family: Karla;
 }
