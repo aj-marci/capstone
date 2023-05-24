@@ -42,7 +42,7 @@ function TestCards() {
             </Col>
         </Row>
     </Card>
-        <Row xs={1} md={2} lg={3}>
+        <Row xs={1} md={1} lg={3}>
         {reviews.map(({ id, name, location, review }) => (
             <Col key={id}>
                 <Card className='custom-class'
@@ -56,7 +56,7 @@ function TestCards() {
                         style={{
                             height:"8rem",
                             width:"8rem",
-                            marginLeft:"8rem",
+                            marginLeft:"10rem",
                             marginBottom:"-3rem",
                             marginTop:"-2rem"}}/>
                         <Card.Title

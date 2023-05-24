@@ -2,6 +2,7 @@ import Card from 'react-bootstrap/Card';
 import React from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Bruchetta from "./Images/bruchetta.svg";
 import Button from 'react-bootstrap/Button';
 
 const specials = [
@@ -46,7 +47,7 @@ function MainCards() {
         </Row>
     </Card>
         <Row xs={1} md={2} lg={3}>
-        {specials.map(({ id, icon, price, title, description }) => (
+        {specials.map(({ id, price, title, description }) => (
             <Col key={id}>
                 <Card className='specials'
                       style={{width:'20rem',
@@ -54,7 +55,7 @@ function MainCards() {
                       marginRight:'auto',
                       marginTop:'1rem',
                       marginBottom:'1rem'}}>
-                    <Card.Img variant='top'src={icon} />
+                    <Card.Img variant='top'src={Bruchetta} />
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
                         <Card.Subtitle className='text-muted'>{price}</Card.Subtitle>
