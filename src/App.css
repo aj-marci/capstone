@@ -30,3 +30,24 @@
   margin-bottom: .5rem;
   margin-top: .5rem;
 }
+
+.specials {
+  font-family: Karla;
+}
+
+.order-btn {
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+}
+
+.main-title {
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.test-title {
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+}

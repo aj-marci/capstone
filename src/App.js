@@ -1,10 +1,11 @@
 import Nav from "./Nav"
 import Header from "./Header";
 import Main from "./Main";
+import MainCards from "./MainCards";
 import Footer from "./Footer";
 import About from "./About";
 import Testimonials from "./Testimonials";
-import MainCards from "./MainCards";
+import TestCards from "./TestCards";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Main />
       <MainCards />
       <Testimonials />
+      <TestCards />
       <About />
       <Footer />
     </>
