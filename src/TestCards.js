@@ -2,6 +2,7 @@ import Card from 'react-bootstrap/Card';
 import React from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 import Pic from "./Images/review-pic.png"
 
 const reviews = [
@@ -28,20 +29,8 @@ const reviews = [
 function TestCards() {
     return (
       <>
-    <Card className='test-title'
-          variant='light' border='light' bg='light'
-          style={{width:'70%'}}>
-        <Row>
-            <Col sm={12} lg={12} align='center'>
-              <Card.Title variant='dark'
-              style={{
-              marginTop:".5rem",
-              fontSize:"2.25rem",
-              fontFamily:"Markazi"}}>
-              Testimonials</Card.Title>
-            </Col>
-        </Row>
-    </Card>
+      <article style={{marginTop:"5rem", marginBottom:"5rem"}}>
+    <Container className='shadow test-container'>
         <Row xs={1} md={1} lg={3}>
         {reviews.map(({ id, name, location, review }) => (
             <Col key={id}>
@@ -49,8 +38,8 @@ function TestCards() {
                       style={{width:'20rem',
                       marginLeft:'auto',
                       marginRight:'auto',
-                      marginTop:'1rem',
-                      marginBottom:'1rem'}}>
+                      marginTop:'1.5rem',
+                      marginBottom:'1.5rem'}}>
                     <Card.Body>
                     <Card.Img className='img-fluid rounded-pill' src={Pic} variant='top'
                         style={{
@@ -77,6 +66,8 @@ function TestCards() {
             </Col>
             ))}
         </Row>
+        </Container>
+        </article>
       </>
     );
   }

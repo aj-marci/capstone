@@ -23,6 +23,7 @@
   color:white;
   margin-left: auto;
   margin-right: auto;
+  border: none;
 }
 
 .nav-items {
@@ -35,8 +36,9 @@
   margin-top: .5rem;
 }
 
-.specials {
+.card.specials-card {
   font-family: Karla;
+  border: none;
 }
 
 .order-btn {
@@ -62,7 +64,13 @@
 
 .card.about-card {
   background-color: #F4CE14;
-  color:#495E57;
+  color: #495E57;
   margin-left: auto;
   margin-right: auto;
+  border: none;
+}
+
+.container.test-container {
+  background-color: rgb(73, 94, 87, .4);
+  border-radius: .75rem;
 }

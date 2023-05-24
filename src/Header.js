@@ -11,8 +11,8 @@ function Header() {
       <header style={{marginTop:"2rem",
                       marginLeft:"5%",
                       marginRight:"5%"}}>
-        <Card border="light" className='custom-class'
-        style={{width:"70%"}}>
+        <Card border="light" className='shadow custom-class'
+        style={{width:"70%", marginBottom:"2rem"}}>
           <Row>
             <Col sm={12} md={4} lg={6}>
             <Card.Title style={{
@@ -46,7 +46,7 @@ function Header() {
             </Col>
             <Col sm={12} md={4} lg={6}>
               <Card.Img src={Food}
-              className='img-fluid rounded'
+              className='img-fluid rounded shadow'
               style={{height:"15rem",
               width:"12rem",
               marginLeft:"4rem",

@@ -32,6 +32,7 @@ const specials = [
 function MainCards() {
     return (
       <>
+      <article style={{marginTop:"5rem"}}>
     <Card className='test-title'
           variant='light' border='light' bg='light'
           style={{width:'70%'}}>
@@ -49,12 +50,12 @@ function MainCards() {
         <Row xs={1} md={2} lg={3}>
         {specials.map(({ id, price, title, description }) => (
             <Col key={id}>
-                <Card className='specials'
+                <Card className='specials-card shadow'
                       style={{width:'20rem',
                       marginLeft:'auto',
                       marginRight:'auto',
                       marginTop:'1rem',
-                      marginBottom:'1rem'}}>
+                      marginBottom:'2rem'}}>
                     <Card.Img variant='top'src={Bruchetta} />
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
@@ -70,6 +71,7 @@ function MainCards() {
             </Col>
             ))}
         </Row>
+        </article>
       </>
     );
   }

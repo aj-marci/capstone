@@ -9,7 +9,7 @@ import "./App.css"
 function Footer () {
   return (
     <>
-    <footer style={{marginTop:"20rem"}}>
+    <footer>
     <Card variant="light" bg="light" border="light">
       <Row>
       <Col sm={12} lg={2}>

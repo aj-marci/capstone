@@ -8,7 +8,7 @@ import "./App.css"
 function About() {
     return (
       <>
-        <article>
+        <article style={{marginBottom:"8rem"}}>
         <Card className='test-title'
           variant='light' border='light' bg='light'
           style={{width:'70%'}}>
@@ -23,37 +23,45 @@ function About() {
             </Col>
         </Row>
     </Card>
-      <Card border="light" className='about-card'
+      <Card border="light" className='shadow about-card'
         style={{width:"60%"}}>
           <Row>
             <Col sm={12} md={12} lg={6}>
             <Card.Subtitle style={{
               marginLeft:"1.15rem",
-              marginTop:"3rem",
+              marginTop:"1.5rem",
               fontSize:"1rem",
               width:"90%",
               fontFamily:"Karla"}}>
-              Hello! We are Yannis and Luigi, first generation Greek American brothers,
+              We are Yannis and Luigi, first generation Greek American brothers,
               and owners of Little Lemon.
             </Card.Subtitle>
             <Card.Subtitle style={{
               marginLeft:"1.15rem",
               marginTop:"1rem",
-              marginBottom:"3rem",
+              marginBottom:"1rem",
               fontSize:"1rem",
               width:"90%",
               fontFamily:"Karla"}}>
               Our menu reflects recipes passed down to us
               that date back to the 19th Century.
             </Card.Subtitle>
+            <Card.Subtitle style={{
+              marginLeft:"1.15rem",
+              marginBottom:"1.5rem",
+              fontSize:"1rem",
+              width:"90%",
+              fontFamily:"Karla"}}>
+              Come on in and say hello!
+            </Card.Subtitle>
             </Col>
             <Col sm={12} md={12} lg={6}>
               <Card.Img src={owners}
-              className='img-fluid rounded'
+              className='img-fluid rounded shadow'
               style={{
-              marginLeft:"-2rem",
-              marginTop:"1rem",
-              marginBottom:"-5rem"}}/>
+              marginLeft:"-1.5rem",
+              marginTop:".5rem",
+              marginBottom:"-4rem"}}/>
             </Col>
             </Row>
         </Card>
