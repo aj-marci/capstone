@@ -2,29 +2,31 @@ import Card from 'react-bootstrap/Card';
 import React from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Bruchetta from "./Images/bruchetta.svg";
 import Button from 'react-bootstrap/Button';
+import Lemon from "./Images/lemon-dessert.jpg";
+import Salad from "./Images/greek-salad.jpg";
+import Bread from "./Images/bruchetta.svg";
 
 const specials = [
     {
-        id:"dessert",
-        icon: "./Images/lemon-dessert.jpg",
+        id: 1,
+        image: Lemon,
         price: "$7.00",
-        title: "Lemon Dessert",
+        name: "Lemon Dessert",
         description: "Fresh lemon and cheescake puree, graham cracker crust.",
     },
     {
-        id:"salad",
-        icon: "./Images/greek-salad.jpg",
+        id: 2,
+        image: Salad,
         price: "$9.00",
-        title: "Greek Salad",
+        name: "Greek Salad",
         description: "Fresh romaine, topped with parm cheese, green olives, ranch dressing",
     },
     {
-        id:"app",
-        icon: "./Images/bruchetta.svg",
+        id: 3,
+        image: Bread,
         price: "$12.00",
-        title: "Bruchetta",
+        name: "Bruchetta",
         description: "Fresh red tomatoes, fresh mozzarella, on top of sliced Baguette.",
     },
 ]
@@ -48,7 +50,7 @@ function MainCards() {
         </Row>
     </Card>
         <Row xs={1} md={2} lg={3}>
-        {specials.map(({ id, price, title, description }) => (
+        {specials.map(({ image, name, price, description, id}) => (
             <Col key={id}>
                 <Card className='specials-card shadow'
                       style={{width:'20rem',
@@ -56,9 +58,9 @@ function MainCards() {
                       marginRight:'auto',
                       marginTop:'1rem',
                       marginBottom:'2rem'}}>
-                    <Card.Img variant='top'src={Bruchetta} />
+                    <Card.Img src={image} variant='top' />
                     <Card.Body>
-                        <Card.Title>{title}</Card.Title>
+                        <Card.Title>{name}</Card.Title>
                         <Card.Subtitle className='text-muted'>{price}</Card.Subtitle>
                         <Card.Text>{description}</Card.Text>
                         <Button className='order-btn'
