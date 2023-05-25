@@ -24,8 +24,7 @@ function Topnav() {
             <Nav className="justify-content-end">
               <Nav.Link href="#about">About</Nav.Link>
               <Nav.Link href="#reserve">Reservations</Nav.Link>
-              <Nav.Link href='#specials'>Specials</Nav.Link>
-              <Nav.Link href='#order'>Order Online</Nav.Link>
+              <Nav.Link href='#specials'>Reviews</Nav.Link>
             </Nav>
           </Container>
           </Navbar.Collapse>

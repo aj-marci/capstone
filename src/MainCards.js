@@ -61,11 +61,11 @@ function MainCards() {
                     <Card.Img src={image} variant='top' />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
-                        <Card.Subtitle className='text-muted'>{price}</Card.Subtitle>
+                        <Card.Subtitle style={{color:"#F4CE14"}}>{price}</Card.Subtitle>
                         <Card.Text>{description}</Card.Text>
                         <Button className='order-btn'
-                            variant='dark'
-                            bg='dark'
+                            variant='light'
+                            bg='light'
                             style={{
                             fontFamily:"Karla"}}>Add To Cart</Button>
                     </Card.Body>

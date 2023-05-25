@@ -3,24 +3,29 @@ import React from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import Pic from "./Images/review-pic.png"
+import Ethan from "./Images/ethan.jpeg";
+import Billy from "./Images/billy.jpeg";
+import Suzy from "./Images/suzy.jpeg";
 
 const reviews = [
     {
-        id:"user1",
-        name: "Audry O.",
+        id: 1,
+        icon: Ethan,
+        name: "Ethan M.",
         location: "Chicago, IL",
-        review: "My favorite neighborhood restaurant. Not ashamed to be a regular.",
+        review: "My favorite neighborhood restaurant. Yannis and Luigi feel like family.",
     },
     {
-        id:"user1",
-        name: "AJ M.",
+        id: 2,
+        icon: Suzy,
+        name: "Suzy Q.",
         location: "Grand Rapids, MI",
         review: "Was in town for work and this meal made my whole trip worth it.",
     },
     {
-        id:"user1",
-        name: "Zach G.",
+        id: 3,
+        icon: Billy,
+        name: "Billy S.",
         location: "Chicago, IL",
         review: "They have all my favorite liquor, best spot in town.",
     },
@@ -32,7 +37,7 @@ function TestCards() {
       <article style={{marginTop:"5rem", marginBottom:"5rem"}}>
     <Container className='shadow test-container'>
         <Row xs={1} md={1} lg={3}>
-        {reviews.map(({ id, name, location, review }) => (
+        {reviews.map(({ id, icon, name, location, review }) => (
             <Col key={id}>
                 <Card className='custom-class'
                       style={{width:'20rem',
@@ -41,7 +46,7 @@ function TestCards() {
                       marginTop:'1.5rem',
                       marginBottom:'1.5rem'}}>
                     <Card.Body>
-                    <Card.Img className='img-fluid rounded-pill' src={Pic} variant='top'
+                    <Card.Img className='img-fluid rounded-pill' src={icon} variant='top'
                         style={{
                             height:"8rem",
                             width:"8rem",

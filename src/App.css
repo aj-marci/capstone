@@ -38,7 +38,9 @@
 
 .card.specials-card {
   font-family: Karla;
+  color: white;
   border: none;
+  background-color: #495E57;
 }
 
 .order-btn {
