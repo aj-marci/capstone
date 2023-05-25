@@ -1,11 +1,16 @@
+import React, { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import ReserveMod1 from './ReserveMod1';
 import "./App.css"
 import Food from "./Images/restauranfood.jpg";
 
 function Header() {
+
+  const [show, setShow] = useState(false);
+
     return (
       <>
       <header style={{marginTop:"2rem",
@@ -37,7 +42,9 @@ function Header() {
               focused on traditional recipes, served with a modern twist nestled
               Downtown Chicago.
             </Card.Subtitle>
-            <Button className='reserve-btn'
+            <Button
+                onClick={() => setShow(true)}
+                className='reserve-btn'
                 variant='dark'
                 bg='dark'
                 style={{
@@ -55,6 +62,10 @@ function Header() {
             </Col>
             </Row>
         </Card>
+        <ReserveMod1
+                show={show}
+                handleClose={() => setShow(false)}
+                handleShow={() => setShow(true)} />
       </header>
       </>
     );
