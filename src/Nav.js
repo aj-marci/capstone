@@ -3,6 +3,17 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Logo from "./Images/Logo.svg";
 
+const handleClick = (anchor) => () => {
+  const id = `${anchor}-section`;
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
+
 function Topnav() {
     return (
       <>
@@ -22,9 +33,9 @@ function Topnav() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Container className='nav-items'>
             <Nav className="justify-content-end">
-              <Nav.Link href="#about">About</Nav.Link>
+              <Nav.Link onClick={handleClick("about")} href={"/#about"}>About</Nav.Link>
               <Nav.Link href="#reserve">Reservations</Nav.Link>
-              <Nav.Link href='#specials'>Reviews</Nav.Link>
+              <Nav.Link onClick={handleClick("review")} href={"/#review"}>Reviews</Nav.Link>
             </Nav>
           </Container>
           </Navbar.Collapse>

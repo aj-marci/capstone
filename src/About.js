@@ -8,7 +8,7 @@ import "./App.css"
 function About() {
     return (
       <>
-        <article style={{marginBottom:"8rem"}}>
+        <article style={{marginBottom:"8rem"}} id="about-section">
         <Card className='test-title'
           variant='light' border='light' bg='light'
           style={{width:'70%'}}>

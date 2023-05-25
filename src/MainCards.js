@@ -64,8 +64,8 @@ function MainCards() {
                         <Card.Subtitle style={{color:"#F4CE14"}}>{price}</Card.Subtitle>
                         <Card.Text>{description}</Card.Text>
                         <Button className='order-btn'
-                            variant='light'
-                            bg='light'
+                            variant='dark'
+                            bg='dark'
                             style={{
                             fontFamily:"Karla"}}>Add To Cart</Button>
                     </Card.Body>
