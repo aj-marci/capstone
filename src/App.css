@@ -76,3 +76,8 @@
   background-color: rgb(73, 94, 87, .4);
   border-radius: .75rem;
 }
+
+input.input-errors,
+select.input-errors {
+border-color: #fc8181;
+}
