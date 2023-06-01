@@ -3,36 +3,42 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { useFormik } from "formik";
 import * as Yup from 'yup';
-import "yup-phone-lite";
+import { useState } from 'react';
+import Alert from 'react-bootstrap/Alert';
+
 
 
 const ReserveMod1 = (props) => {
     const { show, handleClose } = (props)
+    const [alert, setAlert] = useState(false);
+
 
     const formik = useFormik ({
       initialValues: {
         email:"",
         name:"",
-        inOrOut:"",
+        occasion:"",
         date:"",
         people:"",
-        phone:""
+        time:"",
       },
       validationSchema: Yup.object().shape({
         email: Yup.string().email('Invalid email address').required('Required'),
         name: Yup.string()
         .max(15, 'Must be 15 characters or less')
         .required('Required'),
-        inOrOut: Yup.string().required('Required'),
+        occasion: Yup.string().required('Required'),
         date: Yup.date().required('Required'),
         people: Yup.number()
         .min(1, 'Must be at least 1 person')
         .max(6,'We can only host tables of 6 at most')
         .required('Required'),
-        phone: Yup.string().phone("US", "Please enter a valid phone number").required('Required'),
+        time: Yup.string().required('Required'),
     }),
     onSubmit: () => {
-      formik.resetForm();
+        if(!!formik.errors) {
+        setAlert(true)};
+        formik.resetForm();
     },
     })
 
@@ -40,9 +46,13 @@ const ReserveMod1 = (props) => {
         <>
         <Modal onClose={handleClose} show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Come Dine With Us!</Modal.Title>
+            <Modal.Title>Experience Little Lemon</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+          <Alert show={alert} variant="success">
+            <Alert.Heading>Confirmed!</Alert.Heading>
+              <p>You will receive an email confirmation reflecting the details.</p>
+          </Alert>
           <Form noValidate onSubmit={formik.handleSubmit}>
           <Form.Group style={{marginBottom:"1rem"}}>
           <Form.Label>Your Email</Form.Label>
@@ -71,16 +81,18 @@ const ReserveMod1 = (props) => {
           <Form.Text>{formik.errors.name}</Form.Text>
         </Form.Group>
         <Form.Group style={{marginBottom:"1rem"}}>
-          <Form.Label>Seating Preference</Form.Label>
+          <Form.Label>Occasion</Form.Label>
           <Form.Select
-          {...formik.getFieldProps("inOrOut")}
-          id="inOrOut"
-          isInvalid={!!formik.errors.inOrOut && formik.touched.inOrOut}
+          {...formik.getFieldProps("occasion")}
+          id="occasion"
+          isInvalid={!!formik.errors.occasion && formik.touched.occasion}
           aria-label="indoor or outdoor seating">
-            <option value="1">Indoor</option>
-            <option value="2">Outdoor</option>
+            <option value="1">Anniversary</option>
+            <option value="2">Birthday</option>
+            <option value="2">Retirement</option>
+            <option value="2">Other / Just For Fun</option>
           </Form.Select>
-          <Form.Text>{formik.errors.inOrOut}</Form.Text>
+          <Form.Text>{formik.errors.occasion}</Form.Text>
         </Form.Group>
         <Form.Group style={{marginBottom:"1rem"}}>
           <Form.Label>Date</Form.Label>
@@ -94,7 +106,7 @@ const ReserveMod1 = (props) => {
           <Form.Text>{formik.errors.date}</Form.Text>
         </Form.Group>
         <Form.Group style={{marginBottom:"1rem"}}>
-          <Form.Label>Number of People</Form.Label>
+          <Form.Label>Number of Guests</Form.Label>
           <Form.Control
           {...formik.getFieldProps("people")}
           type="number"
@@ -105,15 +117,25 @@ const ReserveMod1 = (props) => {
           <Form.Text>{formik.errors.people}</Form.Text>
         </Form.Group>
         <Form.Group style={{marginBottom:"1rem"}}>
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control
-          {...formik.getFieldProps("phone")}
-          type="tel"
-          id="phone"
-          placeholder='123-456-7890'
-          isInvalid={!!formik.errors.phone && !!formik.touched.phone}
-          />
-          <Form.Text>{formik.errors.phone}</Form.Text>
+          <Form.Label>Preferred Time</Form.Label>
+          <Form.Select
+          {...formik.getFieldProps("time")}
+          id="time"
+          isInvalid={!!formik.errors.time && formik.touched.time}
+          aria-label="preferred reservation time">
+            <option value="1">4:00 PM</option>
+            <option value="2">4:30 PM</option>
+            <option value="3">5:00 PM</option>
+            <option value="4">5:00 PM</option>
+            <option value="5">6:00 PM</option>
+            <option value="6">6:30 PM</option>
+            <option value="6">7:00 PM</option>
+            <option value="7">7:30 PM</option>
+            <option value="8">8:00 PM</option>
+            <option value="9">8:30 PM</option>
+            <option value="10">9:00 PM</option>
+          </Form.Select>
+          <Form.Text>{formik.errors.time}</Form.Text>
         </Form.Group>
         <Button
             variant="dark"
