@@ -12,3 +12,4 @@ packages needed to edit / view on local dev environment.
              <App />
              </BrowserRouter>
             </React.StrictMode>
+4. business logic to send email after submitting reserve table form needs to be added.

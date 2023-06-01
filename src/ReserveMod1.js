@@ -5,6 +5,7 @@ import { useFormik } from "formik";
 import * as Yup from 'yup';
 import { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
+import "./App.css"
 
 
 
@@ -44,13 +45,15 @@ const ReserveMod1 = (props) => {
 
       return (
         <>
-        <Modal onClose={handleClose} show={show} onHide={handleClose}>
+        <Modal onClose={handleClose} show={show} onHide={handleClose}
+               className='reserve-modal'>
           <Modal.Header closeButton>
             <Modal.Title>Experience Little Lemon</Modal.Title>
           </Modal.Header>
           <Modal.Body>
           <Alert show={alert} variant="success">
-            <Alert.Heading>Confirmed!</Alert.Heading>
+            <Alert.Heading>Reservation confirmed!</Alert.Heading>
+              <p>We're so excited to have you!</p>
               <p>You will receive an email confirmation reflecting the details.</p>
           </Alert>
           <Form noValidate onSubmit={formik.handleSubmit}>
@@ -140,7 +143,7 @@ const ReserveMod1 = (props) => {
         <Button
             variant="dark"
             type="submit">
-              Submit
+              Reserve
             </Button>
         </Form>
           </Modal.Body>

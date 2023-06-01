@@ -81,3 +81,8 @@ input.input-errors,
 select.input-errors {
 border-color: #fc8181;
 }
+
+.reserve-modal {
+  font-family: Markazi;
+  background-color: #495E57;
+}
