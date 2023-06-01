@@ -12,3 +12,4 @@ packages needed to edit / view on local dev environment.
              <App />
              </BrowserRouter>
             </React.StrictMode>
+4. npm install --save yup-phone-lite
