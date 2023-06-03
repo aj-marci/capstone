@@ -32,7 +32,7 @@ const ReserveMod1 = (props) => {
         date: Yup.date().required('Required'),
         people: Yup.number()
         .min(1, 'Must be at least 1 person')
-        .max(6,'We can only host tables of 6 at most')
+        .max(10,'We can only host tables of 10 at most')
         .required('Required'),
         time: Yup.string().required('Required'),
     }),
@@ -153,3 +153,35 @@ const ReserveMod1 = (props) => {
     }
 
     export default ReserveMod1;
+
+
+    /*
+        const formik = useFormik ({
+      initialValues: {
+        email:"",
+        name:"",
+        occasion:"",
+        date:"",
+        people:"",
+        time:"",
+      },
+      validationSchema: Yup.object().shape({
+        email: Yup.string().email('Invalid email address').required('Required'),
+        name: Yup.string()
+        .max(15, 'Must be 15 characters or less')
+        .required('Required'),
+        occasion: Yup.string().required('Required'),
+        date: Yup.date().required('Required'),
+        people: Yup.number()
+        .min(1, 'Must be at least 1 person')
+        .max(6,'We can only host tables of 6 at most')
+        .required('Required'),
+        time: Yup.string().required('Required'),
+    }),
+    onSubmit: () => {
+        if(!!formik.errors) {
+        setAlert(true)};
+        formik.resetForm();
+    },
+    })
+    */

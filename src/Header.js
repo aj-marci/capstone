@@ -48,7 +48,7 @@ function Header() {
                 variant='dark'
                 bg='dark'
                 style={{
-                fontFamily:"Karla",
+                fontFamily:"Karla"
               }}>Reserve a Table</Button>
             </Col>
             <Col sm={12} md={4} lg={6}>

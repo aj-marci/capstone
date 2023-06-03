@@ -13,3 +13,4 @@ packages needed to edit / view on local dev environment.
              </BrowserRouter>
             </React.StrictMode>
 4. business logic to send email after submitting reserve table form needs to be added.
+5. add to cart buttons do not have any logic on click.
