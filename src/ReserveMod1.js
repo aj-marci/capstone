@@ -11,6 +11,7 @@ import "./App.css"
 const ReserveMod1 = (props) => {
     const { show, handleClose } = (props)
     const [alert, setAlert] = useState(false);
+    const [form, setForm] = useState(true);
 
     const reserveSchema = Yup.object().shape({
       email: Yup.string().email('Invalid email address').required('Required'),
@@ -29,7 +30,7 @@ const ReserveMod1 = (props) => {
       return (
         <>
         <Modal onClose={handleClose} show={show} onHide={handleClose}
-               className='reserve-modal'>
+               className='reserve-modal' form={form}>
           <Modal.Header closeButton>
             <Modal.Title>Experience Little Lemon</Modal.Title>
           </Modal.Header>
@@ -51,6 +52,7 @@ const ReserveMod1 = (props) => {
                       if(!!reserveSchema) {
                       setAlert(true)};
                       Formik.resetForm();
+                      setForm(true);
                   }}
           >
                   {({
@@ -64,10 +66,12 @@ const ReserveMod1 = (props) => {
        }) => (
           <Form noValidate onSubmit={handleSubmit}>
           <Form.Group style={{marginBottom:"1rem"}}>
-          <Form.Label>Your Email</Form.Label>
+          <Form.Label htmlFor='email'>Your Email</Form.Label>
           <Form.Control
           name="email"
+          data-testid="emailError"
           type="email"
+          id="email"
           placeholder='Enter your email'
           value={values.email}
           onChange={handleChange}

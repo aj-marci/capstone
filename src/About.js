@@ -72,7 +72,8 @@ function About() {
             marginTop:"5rem",
             marginBottom:"1rem"}}
             allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+            referrerpolicy="no-referrer-when-downgrade"
+            title='Google maps of Little Lemon Location in Chicago'>
             </iframe>
             </Row>
         </Card>

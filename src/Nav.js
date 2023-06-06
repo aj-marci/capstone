@@ -20,6 +20,7 @@ const handleClick = (anchor) => () => {
 function Topnav() {
 
   const [show, setShow] = useState(false);
+  const [form, setForm] = useState(true);
 
     return (
       <>
@@ -50,6 +51,8 @@ function Topnav() {
         <Formik children={props => <ReserveMod1
                               {...props}
                               show={show}
+                              form={form}
+                              onClick={() => setForm(true)}
                               handleClose={() => setShow(false)}
                               handleShow={() => setShow(true)}/>} />
         </nav>
