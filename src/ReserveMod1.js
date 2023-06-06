@@ -5,13 +5,13 @@ import { Formik } from "formik";
 import * as Yup from 'yup';
 import { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
-import "./App.css"
+import "./App.css";
+import React from "react";
 
 
 const ReserveMod1 = (props) => {
     const { show, handleClose } = (props)
     const [alert, setAlert] = useState(false);
-    const [form, setForm] = useState(true);
 
     const reserveSchema = Yup.object().shape({
       email: Yup.string().email('Invalid email address').required('Required'),
@@ -29,8 +29,10 @@ const ReserveMod1 = (props) => {
 
       return (
         <>
-        <Modal onClose={handleClose} show={show} onHide={handleClose}
-               className='reserve-modal' form={form}>
+        <Modal onClose={handleClose}
+              show={show}
+              onHide={handleClose}
+              className='reserve-modal'>
           <Modal.Header closeButton>
             <Modal.Title>Experience Little Lemon</Modal.Title>
           </Modal.Header>
@@ -40,7 +42,7 @@ const ReserveMod1 = (props) => {
               <p>We're so excited to have you!</p>
               <p>You will receive an email confirmation reflecting the details.</p>
           </Alert>
-          <Formik initialValues={{
+          <Formik   initialValues={{
                     email: "",
                     firstName:"",
                     occasion:"",
@@ -52,7 +54,6 @@ const ReserveMod1 = (props) => {
                       if(!!reserveSchema) {
                       setAlert(true)};
                       Formik.resetForm();
-                      setForm(true);
                   }}
           >
                   {({
@@ -64,14 +65,14 @@ const ReserveMod1 = (props) => {
                   handleSubmit,
                   isSubmitting,
        }) => (
-          <Form noValidate onSubmit={handleSubmit}>
+          <Form
+            noValidate
+            onSubmit={handleSubmit}>
           <Form.Group style={{marginBottom:"1rem"}}>
-          <Form.Label htmlFor='email'>Your Email</Form.Label>
+          <Form.Label>Your Email</Form.Label>
           <Form.Control
           name="email"
-          data-testid="emailError"
           type="email"
-          id="email"
           placeholder='Enter your email'
           value={values.email}
           onChange={handleChange}
@@ -127,7 +128,7 @@ const ReserveMod1 = (props) => {
           <Form.Control
           type="number"
           id="people"
-          placeholder='2'
+          placeholder='0'
           value={values.people}
           onChange={handleChange}
           onBlur={handleBlur}
