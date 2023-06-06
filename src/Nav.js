@@ -2,6 +2,9 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Logo from "./Images/Logo.svg";
+import ReserveMod1 from './ReserveMod1';
+import { useState } from 'react';
+import { Formik } from "formik";
 
 const handleClick = (anchor) => () => {
   const id = `${anchor}-section`;
@@ -15,6 +18,8 @@ const handleClick = (anchor) => () => {
 };
 
 function Topnav() {
+
+  const [show, setShow] = useState(false);
 
     return (
       <>
@@ -35,12 +40,18 @@ function Topnav() {
           <Container className='nav-items'>
             <Nav className="justify-content-end">
               <Nav.Link onClick={handleClick("about")} href={"/#about"}>About</Nav.Link>
+              <Nav.Link onClick={() => setShow(true)}>Reservations</Nav.Link>
               <Nav.Link onClick={handleClick("review")} href={"/#review"}>Reviews</Nav.Link>
             </Nav>
           </Container>
           </Navbar.Collapse>
         </Container>
         </Navbar>
+        <Formik children={props => <ReserveMod1
+                              {...props}
+                              show={show}
+                              handleClose={() => setShow(false)}
+                              handleShow={() => setShow(true)}/>} />
         </nav>
       </>
     );

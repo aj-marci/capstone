@@ -1,4 +1,4 @@
-Responsive restaurant UI home page, business logic for reserving a table.
+Responsive restaurant UI home page and business logic for reserving a table.
 
 packages needed to edit / view on local dev environment.
 
@@ -14,3 +14,4 @@ packages needed to edit / view on local dev environment.
             </React.StrictMode>
 4. business logic to send email after submitting reserve table form needs to be added.
 5. add to cart buttons do not have any logic on click.
+6. test in app.test.js does not work

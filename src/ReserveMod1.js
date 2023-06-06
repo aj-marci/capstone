@@ -1,47 +1,30 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { useFormik } from "formik";
+import { Formik } from "formik";
 import * as Yup from 'yup';
 import { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import "./App.css"
 
 
-
 const ReserveMod1 = (props) => {
     const { show, handleClose } = (props)
     const [alert, setAlert] = useState(false);
 
-
-    const formik = useFormik ({
-      initialValues: {
-        email:"",
-        name:"",
-        occasion:"",
-        date:"",
-        people:"",
-        time:"",
-      },
-      validationSchema: Yup.object().shape({
-        email: Yup.string().email('Invalid email address').required('Required'),
-        name: Yup.string()
-        .max(15, 'Must be 15 characters or less')
-        .required('Required'),
-        occasion: Yup.string().required('Required'),
-        date: Yup.date().required('Required'),
-        people: Yup.number()
-        .min(1, 'Must be at least 1 person')
-        .max(10,'We can only host tables of 10 at most')
-        .required('Required'),
-        time: Yup.string().required('Required'),
-    }),
-    onSubmit: () => {
-        if(!!formik.errors) {
-        setAlert(true)};
-        formik.resetForm();
-    },
-    })
+    const reserveSchema = Yup.object().shape({
+      email: Yup.string().email('Invalid email address').required('Required'),
+      firstName: Yup.string()
+      .max(15, 'Must be 15 characters or less')
+      .required('Required'),
+      occasion: Yup.string().required('Required'),
+      date: Yup.date().required('Required'),
+      people: Yup.number()
+      .min(1, 'Must be at least 1 person')
+      .max(10,'We can only host tables of 10 at most')
+      .required('Required'),
+      time: Yup.string().required('Required'),
+    });
 
       return (
         <>
@@ -56,75 +39,106 @@ const ReserveMod1 = (props) => {
               <p>We're so excited to have you!</p>
               <p>You will receive an email confirmation reflecting the details.</p>
           </Alert>
-          <Form noValidate onSubmit={formik.handleSubmit}>
+          <Formik initialValues={{
+                    email: "",
+                    firstName:"",
+                    occasion:"",
+                    date:"",
+                    people:"",
+                    time:""}}
+                  validationSchema={reserveSchema}
+                  onSubmit={() => {
+                      if(!!reserveSchema) {
+                      setAlert(true)};
+                      Formik.resetForm();
+                  }}
+          >
+                  {({
+                  values,
+                  errors,
+                  touched,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                  isSubmitting,
+       }) => (
+          <Form noValidate onSubmit={handleSubmit}>
           <Form.Group style={{marginBottom:"1rem"}}>
           <Form.Label>Your Email</Form.Label>
           <Form.Control
-          {...formik.getFieldProps("email")}
-          id="email"
+          name="email"
           type="email"
           placeholder='Enter your email'
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          isInvalid={!!formik.errors.email && formik.touched.email}
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          isInvalid={!!errors.email && touched.email}
           />
-          <Form.Text>{formik.errors.email}</Form.Text>
+          <Form.Text>{errors.email}</Form.Text>
         </Form.Group>
         <Form.Group style={{marginBottom:"1rem"}}>
           <Form.Label>Your First Name</Form.Label>
           <Form.Control
-          {...formik.getFieldProps("name")}
-          id="name"
+          name="firstName"
           type="text"
           placeholder='Enter your first name'
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          isInvalid={!!formik.errors.name && formik.touched.name}
+          value={values.firstName}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          isInvalid={!!errors.firstName && touched.firstName}
           />
-          <Form.Text>{formik.errors.name}</Form.Text>
+          <Form.Text>{errors.firstName}</Form.Text>
         </Form.Group>
         <Form.Group style={{marginBottom:"1rem"}}>
           <Form.Label>Occasion</Form.Label>
           <Form.Select
-          {...formik.getFieldProps("occasion")}
           id="occasion"
-          isInvalid={!!formik.errors.occasion && formik.touched.occasion}
+          value={values.occasion}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          isInvalid={!!errors.occasion && touched.occasion}
           aria-label="indoor or outdoor seating">
             <option value="1">Anniversary</option>
             <option value="2">Birthday</option>
             <option value="2">Retirement</option>
             <option value="2">Other / Just For Fun</option>
           </Form.Select>
-          <Form.Text>{formik.errors.occasion}</Form.Text>
+          <Form.Text>{errors.occasion}</Form.Text>
         </Form.Group>
         <Form.Group style={{marginBottom:"1rem"}}>
           <Form.Label>Date</Form.Label>
           <Form.Control
-          {...formik.getFieldProps("date")}
           id="date"
           type="date"
+          value={values.date}
+          onChange={handleChange}
+          onBlur={handleBlur}
           disablePast
-          isInvalid={!!formik.errors.date && formik.touched.date}
+          isInvalid={!!errors.date && touched.date}
           />
-          <Form.Text>{formik.errors.date}</Form.Text>
+          <Form.Text>{errors.date}</Form.Text>
         </Form.Group>
         <Form.Group style={{marginBottom:"1rem"}}>
           <Form.Label>Number of Guests</Form.Label>
           <Form.Control
-          {...formik.getFieldProps("people")}
           type="number"
           id="people"
           placeholder='2'
-          isInvalid={!!formik.errors.people && !!formik.touched.people}
+          value={values.people}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          isInvalid={!!errors.people && !!touched.people}
           />
-          <Form.Text>{formik.errors.people}</Form.Text>
+          <Form.Text>{errors.people}</Form.Text>
         </Form.Group>
         <Form.Group style={{marginBottom:"1rem"}}>
           <Form.Label>Preferred Time</Form.Label>
           <Form.Select
-          {...formik.getFieldProps("time")}
           id="time"
-          isInvalid={!!formik.errors.time && formik.touched.time}
+          value={values.time}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          isInvalid={!!errors.time && touched.time}
           aria-label="preferred reservation time">
             <option value="1">4:00 PM</option>
             <option value="2">4:30 PM</option>
@@ -138,14 +152,17 @@ const ReserveMod1 = (props) => {
             <option value="9">8:30 PM</option>
             <option value="10">9:00 PM</option>
           </Form.Select>
-          <Form.Text>{formik.errors.time}</Form.Text>
+          <Form.Text>{errors.time}</Form.Text>
         </Form.Group>
         <Button
             variant="dark"
-            type="submit">
+            type="submit"
+            disabled={isSubmitting}>
               Reserve
             </Button>
         </Form>
+        )}
+        </Formik>
           </Modal.Body>
           </Modal>
         </>
