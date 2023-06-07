@@ -78,6 +78,7 @@ const ReserveMod1 = (props) => {
           onChange={handleChange}
           onBlur={handleBlur}
           isInvalid={!!errors.email && touched.email}
+          aria-label="your email address"
           />
           <Form.Text>{errors.email}</Form.Text>
         </Form.Group>
@@ -91,18 +92,19 @@ const ReserveMod1 = (props) => {
           onChange={handleChange}
           onBlur={handleBlur}
           isInvalid={!!errors.firstName && touched.firstName}
+          aria-label="your first name"
           />
           <Form.Text>{errors.firstName}</Form.Text>
         </Form.Group>
         <Form.Group style={{marginBottom:"1rem"}}>
           <Form.Label>Occasion</Form.Label>
           <Form.Select
-          id="occasion"
+          name="occasion"
           value={values.occasion}
           onChange={handleChange}
           onBlur={handleBlur}
           isInvalid={!!errors.occasion && touched.occasion}
-          aria-label="indoor or outdoor seating">
+          aria-label="reservation occasion">
             <option value="1">Anniversary</option>
             <option value="2">Birthday</option>
             <option value="2">Retirement</option>
@@ -113,13 +115,14 @@ const ReserveMod1 = (props) => {
         <Form.Group style={{marginBottom:"1rem"}}>
           <Form.Label>Date</Form.Label>
           <Form.Control
-          id="date"
+          name="date"
           type="date"
           value={values.date}
           onChange={handleChange}
           onBlur={handleBlur}
           disablePast
           isInvalid={!!errors.date && touched.date}
+          aria-label="preferred reservation date"
           />
           <Form.Text>{errors.date}</Form.Text>
         </Form.Group>
@@ -127,19 +130,20 @@ const ReserveMod1 = (props) => {
           <Form.Label>Number of Guests</Form.Label>
           <Form.Control
           type="number"
-          id="people"
+          name="people"
           placeholder='0'
           value={values.people}
           onChange={handleChange}
           onBlur={handleBlur}
           isInvalid={!!errors.people && !!touched.people}
+          aria-label="number of guests"
           />
           <Form.Text>{errors.people}</Form.Text>
         </Form.Group>
         <Form.Group style={{marginBottom:"1rem"}}>
           <Form.Label>Preferred Time</Form.Label>
           <Form.Select
-          id="time"
+          name="time"
           value={values.time}
           onChange={handleChange}
           onBlur={handleBlur}
