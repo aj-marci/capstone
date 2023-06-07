@@ -6,7 +6,9 @@ Responsive restaurant UI home page and business logic for reserving a table.
 2. npm install --save font-awesome-icons
 3. npm i --save @fortawesome/free-solid-svg-icons
 4. npm i --save @fortawesome/free-brands-svg-icons
-3. npm install react-router-dom@6
+5. npm install react-router-dom@6
+6. npm i formik
+7. npm i yup
 
 
 * additional information *
