@@ -7,13 +7,6 @@ Responsive restaurant UI home page and business logic for reserving a table.
 3. npm i --save @fortawesome/free-solid-svg-icons
 4. npm i --save @fortawesome/free-brands-svg-icons
 3. npm install react-router-dom@6
-    - import { BrowserRouter } from "react-router-dom"; at top of index.js
-    - add <BroswerRouter> as below
-             <React.StrictMode>
-             <BrowserRouter>
-             <App />
-             </BrowserRouter>
-            </React.StrictMode>
 
 
 * additional information *
